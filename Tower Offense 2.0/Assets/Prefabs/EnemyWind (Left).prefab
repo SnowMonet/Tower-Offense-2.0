@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5759624144014150553}
   m_Layer: 0
   m_Name: EnemyWind (Left)
-  m_TagString: EnemyWater
+  m_TagString: EnemyWind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

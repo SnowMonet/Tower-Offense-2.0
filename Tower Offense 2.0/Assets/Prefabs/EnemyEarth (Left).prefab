@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8109518310598155957}
   m_Layer: 0
   m_Name: EnemyEarth (Left)
-  m_TagString: EnemyWater
+  m_TagString: EnemyEarth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
