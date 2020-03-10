@@ -8,28 +8,28 @@ public class Enemy : MonoBehaviour
 
     private Transform target;
     private int wavepointIndex = 0;
-    public string pickPath;
+    public string enemyPath;
 
     
     void Start()
     {
-        string[] paths = new string[] { "Center", "Right", "Left" };
+        /*string[] paths = new string[] { "Center", "Right", "Left" };
 
         System.Random randomPath = new System.Random();
         int usePath = randomPath.Next(paths.Length);
-        pickPath = paths[usePath];
+        pickPath = paths[usePath];*/
 
-        if (pickPath == "Center")
+        if (enemyPath == "Center")
         {
             target = CenterWaypoints.centerWaypoints[0];
         }
 
-        else if (pickPath == "Right")
+        else if (enemyPath == "Right")
         {
             target = RightWaypoints.rightWaypoints[0];
         }
 
-        else if (pickPath == "Left")
+        else if (enemyPath == "Left")
         {
             target = LeftWaypoints.leftWaypoints[0];
         }
@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
 
     void GetNextWaypoint()
     {
-        if (pickPath == "Center")
+        if (enemyPath == "Center")
         {
             if (wavepointIndex >= CenterWaypoints.centerWaypoints.Length - 1)
             {
@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
             target = CenterWaypoints.centerWaypoints[wavepointIndex];
         }
 
-        else if (pickPath == "Right")
+        else if (enemyPath == "Right")
         {
             if (wavepointIndex >= RightWaypoints.rightWaypoints.Length - 1)
             {
@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
             target = RightWaypoints.rightWaypoints[wavepointIndex];
         }
 
-        else if (pickPath == "Left")
+        else if (enemyPath == "Left")
         {
             if (wavepointIndex >= LeftWaypoints.leftWaypoints.Length - 1)
             {

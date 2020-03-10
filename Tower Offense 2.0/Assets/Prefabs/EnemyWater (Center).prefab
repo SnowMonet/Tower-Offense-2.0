@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2721575191958009497}
   - component: {fileID: 3784095505043619424}
   m_Layer: 0
-  m_Name: EnemyCenterWater
+  m_Name: EnemyWater (Center)
   m_TagString: EnemyWater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 388c5f26614fd894b94b3ae0b874285d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,3 +108,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  enemyPath: Center

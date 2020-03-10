@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 25381c999b060fd499929af53c1007e8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - waterEnemyLeftPrefab: {fileID: 3342526529386756748, guid: ee70183bb33e9c54f8c9eb94a48932c6,
+      type: 3}
+  - waterEnemyCenterPrefab: {fileID: 2721575191958009476, guid: 8959b552c20ebcb45b86dafb37f56aac,
+      type: 3}
+  - waterEnemyRightPrefab: {fileID: 3851645165582748949, guid: f66b72e017dd3304f875bd0f3387d14c,
+      type: 3}
+  - windEnemyLeftPrefab: {fileID: 6821123036432876413, guid: ce2027d9c85509d42b677674db0edbe0,
+      type: 3}
+  - windEnemyCenterPrefab: {fileID: 7235088559075730814, guid: 9c2a131911d415c48be54f113e7ae40b,
+      type: 3}
+  - windEnemyRightPrefab: {fileID: 7137849768829910995, guid: bf8a864f2d424fa4b805465ed1256207,
+      type: 3}
+  - earthEnemyLeftPrefab: {fileID: 7047569403320227409, guid: e9ab536ebe3fb4749975356805e282d2,
+      type: 3}
+  - earthEnemyCenterPrefab: {fileID: 5029272868653818787, guid: af4697a07c8252b40b17b687a9e10317,
+      type: 3}
+  - earthEnemyRightPrefab: {fileID: 7368909794007682592, guid: b52378cab720aa94398030e1c925803c,
+      type: 3}
+  - enemySpawnPoint: {fileID: 9102315212062906986, guid: 0070a42df65fc50459ffbfd0ec1fc88e,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
