@@ -8,8 +8,18 @@ public class WaterTower : MonoBehaviour
 
     public GameObject playerBase;
 
+    [Header("Tower Stats")]
+
+    public float waterTowerHealth = 100f;
+
     public float waterTowerRange;
-    public float waterTowerAttackSpeed;
+    public float waterTowerFireRate = 1f;
+    public float waterTowerFireCountdown = 0f;
+
+    public float rotateSpeed = 10f;
+
+    public  GameObject iceBulletPrefab;
+    public GameObject iceBulletSpawn;
 
     string[] enemyTags = { "EnemyWater", "EnemyWind", "EnemyEarth" };
 
@@ -47,15 +57,36 @@ public class WaterTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(target == null)
+        waterTowerFireCountdown -= Time.deltaTime;
+
+        if (target == null)
         {
             return;
         }
 
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = lookRotation.eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * rotateSpeed).eulerAngles;
         transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+        if(waterTowerFireCountdown <= 0f)
+        {
+            Shoot();
+            waterTowerFireCountdown = 1f / waterTowerFireRate;
+        }
+    }
+
+    void Shoot()
+    {
+        //Debug.Log("FIRING!");
+
+        GameObject iceBulletGO = (GameObject)Instantiate(iceBulletPrefab, iceBulletSpawn.transform.position, iceBulletSpawn.transform.rotation);
+        IceBullet iceBullet = iceBulletGO.GetComponent<IceBullet>();
+
+        if(iceBullet != null)
+        {
+            iceBullet.Seek(target);
+        }
     }
 
     void OnDrawGizmosSelected()

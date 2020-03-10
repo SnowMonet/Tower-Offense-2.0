@@ -39,7 +39,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        Debug.Log("Wave Spawn");
+        //Debug.Log("Wave Spawn");
 
         //waveNumber++;
 
