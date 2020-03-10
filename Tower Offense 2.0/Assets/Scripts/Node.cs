@@ -11,6 +11,9 @@ public class Node : MonoBehaviour
     private Renderer rend;
     private Color startColor;
 
+    public Vector3 towerOffset;
+    public bool useOffset;
+
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -26,7 +29,14 @@ public class Node : MonoBehaviour
         }
 
         GameObject towerToBuild = BuildManager.instance.GetTowerToBuild();
-        tower = (GameObject)Instantiate(towerToBuild, transform.position, transform.rotation);
+        if(!useOffset)
+        {
+            tower = (GameObject)Instantiate(towerToBuild, transform.position, transform.rotation);
+        }
+        else if(useOffset)
+        {
+            tower = (GameObject)Instantiate(towerToBuild, transform.position + towerOffset, transform.rotation);
+        }
     }
 
     void OnMouseEnter()

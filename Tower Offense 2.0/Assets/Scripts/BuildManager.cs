@@ -18,10 +18,33 @@ public class BuildManager : MonoBehaviour
     }
 
     public GameObject waterTowerPrefab;
+    public GameObject windTowerPrefab;
+    public GameObject earthTowerPrefab;
 
     void Start()
     {
         towerToBuild = waterTowerPrefab;
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown("q"))
+        {
+            Debug.Log("Water Tower Selected");
+            towerToBuild = waterTowerPrefab;
+        }
+
+        if (Input.GetKeyDown("w"))
+        {
+            Debug.Log("Wind Tower Selected");
+            towerToBuild = windTowerPrefab;
+        }
+
+        if (Input.GetKeyDown("e"))
+        {
+            Debug.Log("Earth Tower Selected");
+            towerToBuild = earthTowerPrefab;
+        }
     }
 
     private GameObject towerToBuild;
