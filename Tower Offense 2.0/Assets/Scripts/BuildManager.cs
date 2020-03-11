@@ -28,19 +28,19 @@ public class BuildManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown("q"))
+        if(Input.GetKeyDown("z"))
         {
             Debug.Log("Water Tower Selected");
             towerToBuild = waterTowerPrefab;
         }
 
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKeyDown("x"))
         {
             Debug.Log("Wind Tower Selected");
             towerToBuild = windTowerPrefab;
         }
 
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("c"))
         {
             Debug.Log("Earth Tower Selected");
             towerToBuild = earthTowerPrefab;

@@ -10,7 +10,7 @@ public class WindTower : MonoBehaviour
 
     [Header("Tower Stats")]
 
-    public float windTowerHealth = 100f;
+    public float windTowerHealth = 8f;
 
     public float windTowerRange;
     public float windTowerFireRate = 1f;
@@ -57,6 +57,13 @@ public class WindTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        windTowerHealth -= Time.deltaTime;
+
+        if(windTowerHealth <= 0f)
+        {
+            Destroy(gameObject);
+        }
+
         windTowerFireCountdown -= Time.deltaTime;
 
         if (target == null)

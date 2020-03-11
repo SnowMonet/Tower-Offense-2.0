@@ -10,7 +10,7 @@ public class WaterTower : MonoBehaviour
 
     [Header("Tower Stats")]
 
-    public float waterTowerHealth = 100f;
+    public float waterTowerHealth = 8f;
 
     public float waterTowerRange;
     public float waterTowerFireRate = 1f;
@@ -57,6 +57,13 @@ public class WaterTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        waterTowerHealth -= Time.deltaTime;
+
+        if (waterTowerHealth <= 0f)
+        {
+            Destroy(gameObject);
+        }
+
         waterTowerFireCountdown -= Time.deltaTime;
 
         if (target == null)

@@ -10,7 +10,7 @@ public class EarthTower : MonoBehaviour
 
     [Header("Tower Stats")]
 
-    public float earthTowerHealth = 100f;
+    public float earthTowerHealth = 8f;
 
     public float earthTowerRange;
     public float earthTowerFireRate = 1f;
@@ -57,6 +57,13 @@ public class EarthTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        earthTowerHealth -= Time.deltaTime;
+
+        if(earthTowerHealth <= 0f)
+        {
+            Destroy(gameObject);
+        }
+
         earthTowerFireCountdown -= Time.deltaTime;
 
         if (target == null)
