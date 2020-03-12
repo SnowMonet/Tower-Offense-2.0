@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3071,14 +3071,13 @@ GameObject:
   - component: {fileID: 194186840}
   - component: {fileID: 194186842}
   - component: {fileID: 194186841}
-  - component: {fileID: 194186843}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &194186840
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3138,22 +3137,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194186839}
   m_CullTransparentMesh: 0
---- !u!114 &194186843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194186839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcc1048b022a1e4479b958e4d94bc4e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eyeOpen: {fileID: 0}
-  eyeClosed: {fileID: 0}
-  towerPanelButton: {fileID: 0}
-  cameraPanelButton: {fileID: 0}
 --- !u!1001 &198743336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17247,17 +17230,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2001472205}
-        m_MethodName: ChangeTowerImage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1043598255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17276,8 +17248,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb9caac6c74900d40af9babad4d842ed, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -20705,7 +20677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1263535531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24826,17 +24798,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2001472205}
-        m_MethodName: ChangeCameraImage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1496503771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24855,8 +24816,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb9caac6c74900d40af9babad4d842ed, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -32723,7 +32684,6 @@ GameObject:
   - component: {fileID: 2001472203}
   - component: {fileID: 2001472202}
   - component: {fileID: 2001472204}
-  - component: {fileID: 2001472205}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -32816,22 +32776,6 @@ MonoBehaviour:
     type: 3}
   earthTowerPrefab: {fileID: 2038952124405653094, guid: 9c4539a5499f6924286ada028a7d806d,
     type: 3}
---- !u!114 &2001472205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001472201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcc1048b022a1e4479b958e4d94bc4e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eyeOpen: {fileID: 21300000, guid: eb9caac6c74900d40af9babad4d842ed, type: 3}
-  eyeClosed: {fileID: 21300000, guid: 24b5c63eba6a6034c87f4d90e791f35d, type: 3}
-  towerPanelButton: {fileID: 1043598254}
-  cameraPanelButton: {fileID: 1496503770}
 --- !u!1001 &2007590888
 PrefabInstance:
   m_ObjectHideFlags: 0
