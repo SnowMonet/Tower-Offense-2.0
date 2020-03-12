@@ -131,8 +131,9 @@ MonoBehaviour:
   playerBase: {fileID: 0}
   earthTowerHealth: 8
   earthTowerRange: 15
-  earthTowerFireRate: 1
+  earthTowerFireRate: 1.5
   earthTowerFireCountdown: 0
+  earthTowerCost: 0
   rotateSpeed: 10
   rockBulletPrefab: {fileID: 1666802799454227713, guid: 25b62a35d7c879045935677169f3be37,
     type: 3}

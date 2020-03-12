@@ -16,9 +16,11 @@ public class WaterTower : MonoBehaviour
     public float waterTowerFireRate = 1f;
     public float waterTowerFireCountdown = 0f;
 
+    public int waterTowerCost;
+
     public float rotateSpeed = 10f;
 
-    public  GameObject iceBulletPrefab;
+    public GameObject iceBulletPrefab;
     public GameObject iceBulletSpawn;
 
     string[] enemyTags = { "EnemyWater", "EnemyWind", "EnemyEarth" };
@@ -31,7 +33,7 @@ public class WaterTower : MonoBehaviour
 
     void UpdateTarget()
     {
-        foreach(string tag in enemyTags)
+        foreach (string tag in enemyTags)
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
             float shortestDistance = Mathf.Infinity;

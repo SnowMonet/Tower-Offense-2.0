@@ -9,6 +9,8 @@ public class IceBullet : MonoBehaviour
     public float iceBulletSpeed = 70f;
     public GameObject iceBulletImpactEffect;
 
+    public int damage = 20;
+
     public void Seek(Transform _target)
     {
         target = _target;
@@ -43,7 +45,24 @@ public class IceBullet : MonoBehaviour
         GameObject effectIns = (GameObject)Instantiate(iceBulletImpactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 1f);
 
-        Destroy(target.gameObject);
+        //Destroy(target.gameObject);
+        Damage(target);
         Destroy(gameObject);
+    }
+
+    void Damage (Transform enemy)
+    {
+        Enemy e = enemy.GetComponent<Enemy>();
+
+        if (e.tag == "EnemyWater")
+        {
+            e.TakeDamage(damage * 2);
+            Debug.Log("CRIT!");
+        }
+        else if (e.tag == "EnemyWind" || e.tag == "EnemyEarth")
+        {
+            e.TakeDamage(damage);
+            Debug.Log("Hit!");
+        }
     }
 }

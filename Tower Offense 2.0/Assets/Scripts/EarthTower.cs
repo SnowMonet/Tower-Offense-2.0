@@ -16,6 +16,8 @@ public class EarthTower : MonoBehaviour
     public float earthTowerFireRate = 1f;
     public float earthTowerFireCountdown = 0f;
 
+    public int earthTowerCost;
+
     public float rotateSpeed = 10f;
 
     public GameObject rockBulletPrefab;

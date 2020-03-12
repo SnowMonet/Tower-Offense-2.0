@@ -50,8 +50,9 @@ MonoBehaviour:
   playerBase: {fileID: 0}
   windTowerHealth: 8
   windTowerRange: 15
-  windTowerFireRate: 1
+  windTowerFireRate: 1.5
   windTowerFireCountdown: 0
+  windTowerCost: 0
   rotateSpeed: 10
   airBulletPrefab: {fileID: 6263531246484550050, guid: 2d19e03e767485d4294389bff51ba144,
     type: 3}
