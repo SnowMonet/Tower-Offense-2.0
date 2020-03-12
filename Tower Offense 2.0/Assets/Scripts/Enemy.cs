@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     private Transform target;
     private int wavepointIndex = 0;
     public string enemyPath;
+
+    BuildManager buildManager;
     
     void Start()
     {
@@ -19,6 +21,8 @@ public class Enemy : MonoBehaviour
         System.Random randomPath = new System.Random();
         int usePath = randomPath.Next(paths.Length);
         pickPath = paths[usePath];*/
+
+        buildManager = BuildManager.instance;
 
         if (enemyPath == "Center")
         {
@@ -49,6 +53,7 @@ public class Enemy : MonoBehaviour
     void Kill()
     {
         Destroy(gameObject);
+        buildManager.essenceResource += 1f;
     }
 
     void Update()

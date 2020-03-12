@@ -109,5 +109,11 @@ MonoBehaviour:
   target: {fileID: 0}
   playerBase: {fileID: 2778018336953112249, guid: b7f08e21acc27a040a4c1a7a1e631d24,
     type: 3}
+  waterTowerHealth: 8
   waterTowerRange: 0
-  waterTowerAttackSpeed: 0
+  waterTowerFireRate: 0.5
+  waterTowerFireCountdown: 0
+  waterTowerCost: 0
+  rotateSpeed: 10
+  iceBulletPrefab: {fileID: 0}
+  iceBulletSpawn: {fileID: 0}

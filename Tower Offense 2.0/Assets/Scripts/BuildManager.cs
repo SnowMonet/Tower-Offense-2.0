@@ -26,7 +26,12 @@ public class BuildManager : MonoBehaviour
     public float energyResource = 0f;
     public int roundedEnergy;
 
+    public float essenceResource = 0f;
+    public int roundedEssence;
+    public float allyCost = 3f;
+
     public Text energyText;
+    public Text essenceText;
 
     void Awake()
     {
@@ -44,6 +49,7 @@ public class BuildManager : MonoBehaviour
     public GameObject earthTowerPrefab;
 
     public bool CanBuild;
+    public bool CanAlly;
 
     void Start()
     {
@@ -71,9 +77,20 @@ public class BuildManager : MonoBehaviour
             CanBuild = false;
         }
 
+        if(essenceResource >= allyCost)
+        {
+            CanAlly = true;
+        }
+        else if(essenceResource < allyCost)
+        {
+            CanAlly = false;
+        }
+
         roundedEnergy = (int)energyResource;
         energyText.text = roundedEnergy.ToString();
 
+        roundedEssence = (int)essenceResource;
+        essenceText.text = roundedEssence.ToString();
 
 
         if(Input.GetKeyDown("z"))

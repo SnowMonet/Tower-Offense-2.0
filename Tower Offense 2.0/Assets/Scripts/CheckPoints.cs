@@ -30,10 +30,11 @@ public class CheckPoints : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         
-        if(other.gameObject.tag == "Ally")
+        if(other.tag == "Ally")
         {
             Debug.Log("Ow");
             cpLives -= 1;
+            Destroy(other.gameObject);
         }
 
     }
