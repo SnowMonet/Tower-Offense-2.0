@@ -23,44 +23,66 @@ public class AllyUnits : MonoBehaviour
     {
         if(Input.GetKeyDown("r"))
         {
-            if(!buildManager.CanAlly)
-            {
-                Debug.Log("Not Enough Essence!");
-                return;
-            }
-            if(buildManager.CanAlly)
-            {
-                Instantiate(allyLeftPrefab, allySpawnPoint.position, allySpawnPoint.rotation);
-                buildManager.essenceResource -= buildManager.allyCost;
-            }
+            spawnLeftAlly();
         }
 
         if (Input.GetKeyDown("f"))
         {
-            if (!buildManager.CanAlly)
-            {
-                Debug.Log("Not Enough Essence!");
-                return;
-            }
-            if (buildManager.CanAlly)
-            {
-                Instantiate(allyCenterPrefab, allySpawnPoint.position, allySpawnPoint.rotation);
-                buildManager.essenceResource -= buildManager.allyCost;
-            }
+            spawnMiddleAlly();
         }
 
         if (Input.GetKeyDown("v"))
         {
-            if (!buildManager.CanAlly)
-            {
-                Debug.Log("Not Enough Essence!");
-                return;
-            }
-            if (buildManager.CanAlly)
-            {
-                Instantiate(allyRightPrefab, allySpawnPoint.position, allySpawnPoint.rotation);
-                buildManager.essenceResource -= buildManager.allyCost;
-            }
+            spawnRightAlly();
         }
     }
+
+    public void spawnLeftAlly()
+    {
+
+        if (!buildManager.CanAlly)
+        {
+            Debug.Log("Not Enough Essence!");
+            return;
+        }
+        if (buildManager.CanAlly)
+        {
+            Instantiate(allyLeftPrefab, allySpawnPoint.position, allySpawnPoint.rotation);
+            buildManager.essenceResource -= buildManager.allyCost;
+        }
+
+    }
+
+    public void spawnMiddleAlly()
+    {
+
+        if (!buildManager.CanAlly)
+        {
+            Debug.Log("Not Enough Essence!");
+            return;
+        }
+        if (buildManager.CanAlly)
+        {
+            Instantiate(allyCenterPrefab, allySpawnPoint.position, allySpawnPoint.rotation);
+            buildManager.essenceResource -= buildManager.allyCost;
+        }
+
+    }
+
+    public void spawnRightAlly()
+    {
+
+        if (!buildManager.CanAlly)
+        {
+            Debug.Log("Not Enough Essence!");
+            return;
+        }
+        if (buildManager.CanAlly)
+        {
+            Instantiate(allyRightPrefab, allySpawnPoint.position, allySpawnPoint.rotation);
+            buildManager.essenceResource -= buildManager.allyCost;
+        }
+
+    }
+
 }

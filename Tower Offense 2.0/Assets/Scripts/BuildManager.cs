@@ -11,12 +11,14 @@ public class BuildManager : MonoBehaviour
     public GameObject towerPanel;
     public GameObject cameraPanel;
     public GameObject selectedTowerPanel;
+    public GameObject allyUnitPanel;
 
     public Text selectedTowerText;
 
     public int towerPanelActiveIndex;
     public int cameraPanelActiveIndex;
     public int selectedTowerPanelActiveIndex;
+    public int allyUnitPanelIndex;
     public int cameraViewIndex;
 
     public Image waterTowerOutline;
@@ -58,6 +60,7 @@ public class BuildManager : MonoBehaviour
         towerPanelActiveIndex = 0;
         cameraPanelActiveIndex = 0;
         selectedTowerPanelActiveIndex = 0;
+        allyUnitPanelIndex = 0;
         selectedTowerText.text = "Water Tower Selected";
     }
 
@@ -212,6 +215,26 @@ public class BuildManager : MonoBehaviour
         if (selectedTowerPanelActiveIndex == 1)
         {
             selectedTowerPanel.SetActive(false);
+        }
+    }
+
+    public void closeUnitPanel()
+    {
+        allyUnitPanelIndex += 1;
+
+        if (allyUnitPanelIndex >= 2)
+        {
+            allyUnitPanelIndex = 0;
+        }
+
+        if (allyUnitPanelIndex == 0)
+        {
+            allyUnitPanel.SetActive(true);
+        }
+
+        if (allyUnitPanelIndex == 1)
+        {
+            allyUnitPanel.SetActive(false);
         }
     }
 
