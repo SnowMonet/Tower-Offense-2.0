@@ -19,6 +19,15 @@ public class BuildManager : MonoBehaviour
     public int selectedTowerPanelActiveIndex;
     public int cameraViewIndex;
 
+    public Image waterTowerOutline;
+    public Image windTowerOutline;
+    public Image earthTowerOutline;
+
+    public float energyResource = 0f;
+    public int roundedEnergy;
+
+    public Text energyText;
+
     void Awake()
     {
         if(instance != null)
@@ -34,9 +43,11 @@ public class BuildManager : MonoBehaviour
     public GameObject windTowerPrefab;
     public GameObject earthTowerPrefab;
 
+    public bool CanBuild;
+
     void Start()
     {
-        towerToBuild = waterTowerPrefab;
+        //towerToBuild = waterTowerPrefab;
         cameraViewIndex = 0;
         towerPanelActiveIndex = 0;
         cameraPanelActiveIndex = 0;
@@ -46,6 +57,23 @@ public class BuildManager : MonoBehaviour
 
     void Update()
     {
+        if(energyResource <= 20)
+        {
+            energyResource += 1f * Time.deltaTime;
+        }
+
+        if(energyResource >= 5)
+        {
+            CanBuild = true;
+        }
+        else if(energyResource < 5)
+        {
+            CanBuild = false;
+        }
+
+        roundedEnergy = (int)energyResource;
+        energyText.text = roundedEnergy.ToString();
+
         if(Input.GetKeyDown("z"))
         {
             waterTower();
@@ -77,6 +105,9 @@ public class BuildManager : MonoBehaviour
         towerLogos[1].SetActive(false);
         towerLogos[2].SetActive(false);
         towerToBuild = waterTowerPrefab;
+        waterTowerOutline.enabled = true;
+        windTowerOutline.enabled = false;
+        earthTowerOutline.enabled = false;
     }
 
     public void windTower()
@@ -87,6 +118,9 @@ public class BuildManager : MonoBehaviour
         towerLogos[1].SetActive(true);
         towerLogos[2].SetActive(false);
         towerToBuild = windTowerPrefab;
+        waterTowerOutline.enabled = false;
+        windTowerOutline.enabled = true;
+        earthTowerOutline.enabled = false;
     }
 
     public void earthTower()
@@ -97,6 +131,9 @@ public class BuildManager : MonoBehaviour
         towerLogos[1].SetActive(false);
         towerLogos[2].SetActive(true);
         towerToBuild = earthTowerPrefab;
+        waterTowerOutline.enabled = false;
+        windTowerOutline.enabled = false;
+        earthTowerOutline.enabled = true;
     }
 
     public void closeTowerPanel()

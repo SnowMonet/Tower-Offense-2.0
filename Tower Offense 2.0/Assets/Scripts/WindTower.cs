@@ -16,6 +16,8 @@ public class WindTower : MonoBehaviour
     public float windTowerFireRate = 1f;
     public float windTowerFireCountdown = 0f;
 
+    public int windTowerCost;
+
     public float rotateSpeed = 10f;
 
     public GameObject airBulletPrefab;
