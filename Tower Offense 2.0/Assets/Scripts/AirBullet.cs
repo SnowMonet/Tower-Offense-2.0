@@ -9,6 +9,8 @@ public class AirBullet : MonoBehaviour
     public float airBulletSpeed = 70f;
     public GameObject airBulletImpactEffect;
 
+    public int damage = 20;
+
     public void Seek(Transform _target)
     {
         target = _target;
@@ -43,7 +45,24 @@ public class AirBullet : MonoBehaviour
         GameObject effectIns = (GameObject)Instantiate(airBulletImpactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 1f);
 
-        Destroy(target.gameObject);
+        //Destroy(target.gameObject);
+        Damage(target);
         Destroy(gameObject);
+    }
+
+    void Damage (Transform enemy)
+    {
+        Enemy e = enemy.GetComponent<Enemy>();
+
+        if (e.tag == "EnemyWind")
+        {
+            e.TakeDamage(damage * 2);
+            Debug.Log("CRIT!");
+        }
+        else if (e.tag == "EnemyWater" || e.tag == "EnemyEarth")
+        {
+            e.TakeDamage(damage);
+            Debug.Log("Hit!");
+        }
     }
 }

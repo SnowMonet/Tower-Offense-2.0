@@ -6,10 +6,11 @@ public class Enemy : MonoBehaviour
 {
     public float speed;
 
+    public int health = 80;
+
     private Transform target;
     private int wavepointIndex = 0;
     public string enemyPath;
-
     
     void Start()
     {
@@ -35,6 +36,21 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+
+        if(health <= 0)
+        {
+            Kill();
+        }
+    }
+
+    void Kill()
+    {
+        Destroy(gameObject);
+    }
+
     void Update()
     {
         Vector3 direction = target.position - transform.position;
@@ -52,6 +68,7 @@ public class Enemy : MonoBehaviour
         {
             if (wavepointIndex >= CenterWaypoints.centerWaypoints.Length - 1)
             {
+                PlayerHealth.playerHealthValue--;
                 Destroy(gameObject);
                 return;
             }
@@ -64,6 +81,7 @@ public class Enemy : MonoBehaviour
         {
             if (wavepointIndex >= RightWaypoints.rightWaypoints.Length - 1)
             {
+                PlayerHealth.playerHealthValue--;
                 Destroy(gameObject);
                 return;
             }
@@ -76,6 +94,7 @@ public class Enemy : MonoBehaviour
         {
             if (wavepointIndex >= LeftWaypoints.leftWaypoints.Length - 1)
             {
+                PlayerHealth.playerHealthValue--;
                 Destroy(gameObject);
                 return;
             }

@@ -74,6 +74,8 @@ public class BuildManager : MonoBehaviour
         roundedEnergy = (int)energyResource;
         energyText.text = roundedEnergy.ToString();
 
+
+
         if(Input.GetKeyDown("z"))
         {
             waterTower();
