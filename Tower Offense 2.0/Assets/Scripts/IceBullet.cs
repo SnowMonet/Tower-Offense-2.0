@@ -56,12 +56,12 @@ public class IceBullet : MonoBehaviour
         if (e.tag == "EnemyWater")
         {
             e.TakeDamage(damage * 2);
-            Debug.Log("CRIT!");
+            //Debug.Log("CRIT!");
         }
         else if (e.tag == "EnemyWind" || e.tag == "EnemyEarth")
         {
             e.TakeDamage(damage);
-            Debug.Log("Hit!");
+            //Debug.Log("Hit!");
         }
     }
 }

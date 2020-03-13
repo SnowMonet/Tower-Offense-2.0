@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown("p"))
+     /* if(Input.GetKeyDown("p"))
         {
             GameOver();
         }
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown("o"))
         {
             Victory();
-        }
+        } */
 
         if(PlayerHealth.playerHealthValue <= 0 && !GameIsOver)
         {
@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         GameIsOver = true;
-
         gameOverUI.SetActive(true);
 
         //Debug.Log("Game!");

@@ -36,7 +36,7 @@ public class CheckPoints : MonoBehaviour
         
         if(other.tag == "Ally")
         {
-            Debug.Log("Ow");
+            //Debug.Log("Ow");
             cpLives -= 1;
             Destroy(other.gameObject);
         }

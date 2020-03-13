@@ -121,7 +121,7 @@ public class BuildManager : MonoBehaviour
 
     public void waterTower()
     {
-        Debug.Log("Water Tower Selected");
+        //Debug.Log("Water Tower Selected");
         selectedTowerText.text = "Water Tower Selected";
         towerLogos[0].SetActive(true);
         towerLogos[1].SetActive(false);
@@ -134,7 +134,7 @@ public class BuildManager : MonoBehaviour
 
     public void windTower()
     {
-        Debug.Log("Wind Tower Selected");
+        //Debug.Log("Wind Tower Selected");
         selectedTowerText.text = "Wind Tower Selected";
         towerLogos[0].SetActive(false);
         towerLogos[1].SetActive(true);
@@ -147,7 +147,7 @@ public class BuildManager : MonoBehaviour
 
     public void earthTower()
     {
-        Debug.Log("Earth Tower Selected");
+        //Debug.Log("Earth Tower Selected");
         selectedTowerText.text = "Earth Tower Selected";
         towerLogos[0].SetActive(false);
         towerLogos[1].SetActive(false);

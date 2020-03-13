@@ -57,12 +57,12 @@ public class AirBullet : MonoBehaviour
         if (e.tag == "EnemyWind")
         {
             e.TakeDamage(damage * 2);
-            Debug.Log("CRIT!");
+            //Debug.Log("CRIT!");
         }
         else if (e.tag == "EnemyWater" || e.tag == "EnemyEarth")
         {
             e.TakeDamage(damage);
-            Debug.Log("Hit!");
+            //Debug.Log("Hit!");
         }
     }
 }
