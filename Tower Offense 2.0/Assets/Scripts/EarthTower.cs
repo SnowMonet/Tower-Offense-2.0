@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EarthTower : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class EarthTower : MonoBehaviour
 
     [Header("Tower Stats")]
 
-    public float earthTowerHealth = 8f;
+    public float earthTowerStartHealth = 8f;
+    public float earthTowerHealthValue;
 
     public float earthTowerRange;
     public float earthTowerFireRate = 1f;
@@ -25,9 +27,15 @@ public class EarthTower : MonoBehaviour
 
     string[] enemyTags = { "EnemyWater", "EnemyWind", "EnemyEarth" };
 
+    [Header("Unity Stuff")]
+
+    public Image healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
+        earthTowerHealthValue = earthTowerStartHealth;
+
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -59,9 +67,11 @@ public class EarthTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        earthTowerHealth -= Time.deltaTime;
+        earthTowerHealthValue -= Time.deltaTime;
 
-        if(earthTowerHealth <= 0f)
+        healthBar.fillAmount = earthTowerHealthValue / earthTowerStartHealth;
+
+        if(earthTowerHealthValue <= 0f)
         {
             Destroy(gameObject);
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaterTower : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class WaterTower : MonoBehaviour
 
     [Header("Tower Stats")]
 
-    public float waterTowerHealth = 8f;
+    public float waterTowerStartHealth = 8f;
+    public float waterTowerHealthValue;
 
     public float waterTowerRange;
     public float waterTowerFireRate = 1f;
@@ -23,11 +25,16 @@ public class WaterTower : MonoBehaviour
     public GameObject iceBulletPrefab;
     public GameObject iceBulletSpawn;
 
+    [Header("Unity Stuff")]
+    public Image healthBar;
+
     string[] enemyTags = { "EnemyWater", "EnemyWind", "EnemyEarth" };
 
     // Start is called before the first frame update
     void Start()
     {
+        waterTowerHealthValue = waterTowerStartHealth;
+
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -59,9 +66,11 @@ public class WaterTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        waterTowerHealth -= Time.deltaTime;
+        waterTowerHealthValue -= Time.deltaTime;
 
-        if (waterTowerHealth <= 0f)
+        healthBar.fillAmount = waterTowerHealthValue / waterTowerStartHealth;
+
+        if (waterTowerHealthValue <= 0f)
         {
             Destroy(gameObject);
         }

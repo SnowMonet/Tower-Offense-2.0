@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WindTower : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class WindTower : MonoBehaviour
 
     [Header("Tower Stats")]
 
-    public float windTowerHealth = 8f;
+    public float windTowerStartHealth = 8f;
+    public float windTowerHealthValue;
 
     public float windTowerRange;
     public float windTowerFireRate = 1f;
@@ -25,9 +27,15 @@ public class WindTower : MonoBehaviour
 
     string[] enemyTags = { "EnemyWater", "EnemyWind", "EnemyEarth" };
 
+    [Header("Unity Stuff")]
+
+    public Image healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
+        windTowerHealthValue = windTowerStartHealth;
+
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -59,9 +67,11 @@ public class WindTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        windTowerHealth -= Time.deltaTime;
+        windTowerHealthValue -= Time.deltaTime;
 
-        if(windTowerHealth <= 0f)
+        healthBar.fillAmount = windTowerHealthValue / windTowerStartHealth;
+
+        if(windTowerHealthValue <= 0f)
         {
             Destroy(gameObject);
         }
