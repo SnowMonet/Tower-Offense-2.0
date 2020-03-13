@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   playerBase: {fileID: 0}
-  windTowerHealth: 8
+  windTowerHealth: 10
   windTowerRange: 15
   windTowerFireRate: 1.5
   windTowerFireCountdown: 0

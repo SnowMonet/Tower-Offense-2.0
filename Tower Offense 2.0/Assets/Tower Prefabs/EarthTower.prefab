@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   playerBase: {fileID: 0}
-  earthTowerHealth: 8
+  earthTowerHealth: 10
   earthTowerRange: 15
   earthTowerFireRate: 1.5
   earthTowerFireCountdown: 0

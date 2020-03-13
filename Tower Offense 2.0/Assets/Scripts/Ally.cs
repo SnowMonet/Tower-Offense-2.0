@@ -1,19 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ally : MonoBehaviour
 {
     public float allySpeed;
-    public int allyHealth = 80;
+    public float allyStartHealth = 80;
+    private float allyHealth;
 
     private Transform target;
     private int wavepointIndex = 0;
     public string allyPath;
 
+    [Header("Unity Stuff")]
+    public Image healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
+        allyHealth = allyStartHealth;
+
         if (allyPath == "Center")
         {
             target = CenterAllyWaypoints.centerAllyWaypoints[0];
@@ -28,6 +35,23 @@ public class Ally : MonoBehaviour
         {
             target = LeftAllyWaypoints.leftAllyWaypoints[0];
         }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        allyHealth -= amount;
+
+        healthBar.fillAmount = allyHealth / allyStartHealth;
+
+        if (allyHealth <= 0)
+        {
+            Kill();
+        }
+    }
+
+    void Kill()
+    {
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
@@ -49,6 +73,7 @@ public class Ally : MonoBehaviour
             if (wavepointIndex >= CenterAllyWaypoints.centerAllyWaypoints.Length - 1)
             {
                 Destroy(gameObject);
+                EnemyBaseHealth.enemyBaseHealthValue --;
                 return;
             }
 

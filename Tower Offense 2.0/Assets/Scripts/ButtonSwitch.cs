@@ -15,7 +15,7 @@ public class ButtonSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        towerPanelButton.transform.position = new Vector3(685f, 435f, 0f);
+        //towerPanelButton.transform.position = new Vector3(685f, 435f, 0f);
     }
 
     // Update is called once per frame
@@ -29,14 +29,14 @@ public class ButtonSwitch : MonoBehaviour
         if (towerPanelButton.image.sprite == eyeOpen)
         {
             towerPanelButton.image.sprite = eyeClosed;
-            towerPanelButton.transform.position = new Vector3(785f, 435f, 0f);
+            //towerPanelButton.transform.position = new Vector3(785f, 435f, 0f);
             
             
         }
         else
         {
             towerPanelButton.image.sprite = eyeOpen;
-            towerPanelButton.transform.position = new Vector3(685f, 435f, 0f);
+            //towerPanelButton.transform.position = new Vector3(685f, 435f, 0f);
         }
     }
 

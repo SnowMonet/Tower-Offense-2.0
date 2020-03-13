@@ -4,20 +4,51 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private bool gameEnded = false;
+    private static bool GameIsOver;
 
-    // Update is called once per frame
+    public GameObject gameOverUI;
+    public GameObject victoryUI;
+
+    void Start()
+    {
+        GameIsOver = false;
+    }
+
     void Update()
     {
-        if(PlayerHealth.playerHealthValue <= 0 && !gameEnded)
+        if(Input.GetKeyDown("p"))
         {
             GameOver();
+        }
+
+        if(Input.GetKeyDown("o"))
+        {
+            Victory();
+        }
+
+        if(PlayerHealth.playerHealthValue <= 0 && !GameIsOver)
+        {
+            GameOver();
+        }
+
+        if(EnemyBaseHealth.enemyBaseHealthValue <= 0 && !GameIsOver)
+        {
+            Victory();
         }
     }
 
     void GameOver()
     {
-        Debug.Log("Game!");
-        gameEnded = true;
+        GameIsOver = true;
+
+        gameOverUI.SetActive(true);
+
+        //Debug.Log("Game!");
+    }
+
+    void Victory()
+    {
+        GameIsOver = true;
+        victoryUI.SetActive(true);
     }
 }
